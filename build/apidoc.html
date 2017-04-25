@@ -1,0 +1,1400 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/manifoldjs/ManifoldJS"
+
+    >manifoldjs (v0.7.6)</a>
+</h1>
+<h4>Node.js Tool for App Generation</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.manifoldjs">module manifoldjs</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">manifoldjs.</span>manifestTools</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">manifoldjs.</span>projectBuilder</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">manifoldjs.</span>projectTools</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">manifoldjs.</span>validationConstants</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.manifoldjs.manifestTools">module manifoldjs.manifestTools</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.manifoldjs.manifestTools.applyValidationRules">
+            function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>applyValidationRules
+            <span class="apidocSignatureSpan">(w3cManifestInfo, platformModules, platforms)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.manifoldjs.manifestTools.convertTo">
+            function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>convertTo
+            <span class="apidocSignatureSpan">(manifestInfo, outputFormat, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.manifoldjs.manifestTools.downloadManifestFromUrl">
+            function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>downloadManifestFromUrl
+            <span class="apidocSignatureSpan">(manifestUrl, manifestFormat, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.manifoldjs.manifestTools.fetchManifestUrlFromSite">
+            function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>fetchManifestUrlFromSite
+            <span class="apidocSignatureSpan">(siteUrl, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.manifoldjs.manifestTools.getManifestFromFile">
+            function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>getManifestFromFile
+            <span class="apidocSignatureSpan">(filePath, manifestFormat, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.manifoldjs.manifestTools.getManifestFromSite">
+            function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>getManifestFromSite
+            <span class="apidocSignatureSpan">(siteUrl, manifestFormat, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.manifoldjs.manifestTools.imageGroupValidation">
+            function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>imageGroupValidation
+            <span class="apidocSignatureSpan">(manifestContent, description, platform, validIconSizes, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.manifoldjs.manifestTools.imageValidation">
+            function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>imageValidation
+            <span class="apidocSignatureSpan">(manifestContent, description, platform, level, requiredIconSizes, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.manifoldjs.manifestTools.listAvailableManifestFormats">
+            function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>listAvailableManifestFormats
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.manifoldjs.manifestTools.loadValidationRules">
+            function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>loadValidationRules
+            <span class="apidocSignatureSpan">(fileOrDir, platforms, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.manifoldjs.manifestTools.runValidationRules">
+            function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>runValidationRules
+            <span class="apidocSignatureSpan">(w3cManifestInfo, rules, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.manifoldjs.manifestTools.validateAndNormalizeStartUrl">
+            function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>validateAndNormalizeStartUrl
+            <span class="apidocSignatureSpan">(siteUrl, manifestInfo, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.manifoldjs.manifestTools.validateManifest">
+            function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>validateManifest
+            <span class="apidocSignatureSpan">(w3cManifestInfo, platforms, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.manifoldjs.manifestTools.writeToFile">
+            function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>writeToFile
+            <span class="apidocSignatureSpan">(manifestInfo, filePath, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.manifoldjs.projectBuilder">module manifoldjs.projectBuilder</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.manifoldjs.projectBuilder.createApps">
+            function <span class="apidocSignatureSpan">manifoldjs.projectBuilder.</span>createApps
+            <span class="apidocSignatureSpan">(w3cManifestInfo, rootDir, platforms, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.manifoldjs.projectBuilder.openApp">
+            function <span class="apidocSignatureSpan">manifoldjs.projectBuilder.</span>openApp
+            <span class="apidocSignatureSpan">(platformId, dir, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.manifoldjs.projectBuilder.packageApps">
+            function <span class="apidocSignatureSpan">manifoldjs.projectBuilder.</span>packageApps
+            <span class="apidocSignatureSpan">(platforms, dir, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.manifoldjs.projectBuilder.runApp">
+            function <span class="apidocSignatureSpan">manifoldjs.projectBuilder.</span>runApp
+            <span class="apidocSignatureSpan">(platformId, dir, options, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.manifoldjs.projectTools">module manifoldjs.projectTools</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.manifoldjs.projectTools.getProjectPlatforms">
+            function <span class="apidocSignatureSpan">manifoldjs.projectTools.</span>getProjectPlatforms
+            <span class="apidocSignatureSpan">(dir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.manifoldjs.projectTools.getProjectRoot">
+            function <span class="apidocSignatureSpan">manifoldjs.projectTools.</span>getProjectRoot
+            <span class="apidocSignatureSpan">(dir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.manifoldjs.projectTools.isProjectRoot">
+            function <span class="apidocSignatureSpan">manifoldjs.projectTools.</span>isProjectRoot
+            <span class="apidocSignatureSpan">(dir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.manifoldjs.projectTools.openVisualStudioProject">
+            function <span class="apidocSignatureSpan">manifoldjs.projectTools.</span>openVisualStudioProject
+            <span class="apidocSignatureSpan">(visualStudioFilePath, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.manifoldjs" id="apidoc.module.manifoldjs">module manifoldjs</a></h1>
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.manifoldjs.manifestTools" id="apidoc.module.manifoldjs.manifestTools">module manifoldjs.manifestTools</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.manifoldjs.manifestTools.applyValidationRules" id="apidoc.element.manifoldjs.manifestTools.applyValidationRules">
+        function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>applyValidationRules
+        <span class="apidocSignatureSpan">(w3cManifestInfo, platformModules, platforms)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function applyValidationRules(w3cManifestInfo, platformModules, platforms) {
+
+  var allResults = [];
+
+  function validateAllPlatforms() {
+    // load and run validation rules for &#x22;all platforms&#x22;
+    var validationRulesDir = path.join(__dirname, &#x27;validationRules&#x27;);
+    return loadValidationRules(validationRulesDir).then(function (rules) {
+      return runValidationRules(w3cManifestInfo, rules).then(function (results) {
+        allResults.push.apply(allResults, results);
+      });
+    });
+  }
+
+  function validatePlatform() {
+    // run platform-specific validation rules
+    var platformTasks = platformModules.map(function (platform) {
+      return platform.getValidationRules(platforms).then(function (rules) {
+        return runValidationRules(w3cManifestInfo, rules).then(function (results) {
+          allResults.push.apply(allResults, results);
+        });
+      });
+    });
+
+    return Q.allSettled(platformTasks);
+  }
+
+  // Only run the &#x22;All Platform&#x22; validations for W3C manifests
+  if (w3cManifestInfo.format === constants.BASE_MANIFEST_FORMAT) {
+    return validateAllPlatforms()
+      .then(validatePlatform)
+      .thenResolve(allResults);
+  } else {
+    return validatePlatform()
+      .thenResolve(allResults);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.manifoldjs.manifestTools.convertTo" id="apidoc.element.manifoldjs.manifestTools.convertTo">
+        function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>convertTo
+        <span class="apidocSignatureSpan">(manifestInfo, outputFormat, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function convertTo(manifestInfo, outputFormat, callback) {
+
+  if (arguments.length &#x3c; 3) {
+    if (utils.isFunction(outputFormat)) {
+      callback = outputFormat;
+      outputFormat = undefined;
+    }
+  }
+
+  if (!manifestInfo || !manifestInfo.content) {
+    return callback(new Error(&#x27;Manifest content is empty or not initialized.&#x27;));
+  }
+
+  var inputFormat = constants.BASE_MANIFEST_FORMAT;
+  if (manifestInfo.format &#x26;&#x26; utils.isString(manifestInfo.format)) {
+    inputFormat = manifestInfo.format.toLowerCase();
+  }
+
+  if (outputFormat &#x26;&#x26; utils.isString(outputFormat)) {
+    outputFormat = outputFormat.toLowerCase();
+  } else {
+    outputFormat = constants.BASE_MANIFEST_FORMAT;
+  }
+
+  if (inputFormat === outputFormat) {
+    if (!manifestInfo.format) {
+      manifestInfo.format = outputFormat;
+    }
+    return callback(undefined, manifestInfo);
+  }
+
+  var inputTransformation = transformations[inputFormat];
+  var outputTransformation = transformations[outputFormat];
+
+  if (!inputTransformation || !outputTransformation) {
+    return callback(new Error(&#x27;Manifest format is not recognized.&#x27;));
+  }
+
+  inputTransformation.convertToBase(manifestInfo, function (err, resultManifestInfo) {
+    if (err) {
+      return callback(err, resultManifestInfo);
+    }
+
+    outputTransformation.convertFromBase(resultManifestInfo, callback);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.manifoldjs.manifestTools.downloadManifestFromUrl" id="apidoc.element.manifoldjs.manifestTools.downloadManifestFromUrl">
+        function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>downloadManifestFromUrl
+        <span class="apidocSignatureSpan">(manifestUrl, manifestFormat, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function downloadManifestFromUrl(manifestUrl, manifestFormat, callback) {
+
+  if (arguments.length &#x3c; 3) {
+    if (utils.isFunction(manifestFormat)) {
+      callback = manifestFormat;
+      manifestFormat = undefined;
+    }
+  }
+
+  var deferred = Q.defer();
+  request({ uri: manifestUrl }, function (err, response, data) {
+    if (err || response.statusCode !== 200) {
+      return deferred.reject(new Error(&#x27;Failed to download manifest data.&#x27;));
+    }
+
+    Q.nfcall(processManifestContents, data, manifestFormat).then(function (manifestInfo) {
+      if (manifestInfo) {
+        manifestInfo.generatedUrl = manifestUrl;
+      }
+
+      return deferred.resolve(manifestInfo);
+    })
+    .catch(function (err) {
+      return deferred.reject(err);
+    });
+  });
+
+  return deferred.promise.nodeify(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+if (manifestLocation) {
+  var parsedManifestUrl = url.parse(manifestLocation);
+  if (parsedManifestUrl &#x26;&#x26; parsedManifestUrl.host) {
+    // download manifest from remote location
+    log.info(&#x27;Downloading manifest from &#x27; + manifestLocation + &#x27;...&#x27;);
+    manifestTools.<span class="apidocCodeKeywordSpan">downloadManifestFromUrl</span>(manifestLocation, manifestFormat, resolveStartURL
+);
+  } else {
+    // read local manifest file
+    log.info(&#x27;Reading manifest file &#x27; + manifestLocation + &#x27;...&#x27;);
+    manifestTools.getManifestFromFile(manifestLocation, manifestFormat, resolveStartURL);
+  }
+} else if (siteUrl) {
+  // scan a site to retrieve its manifest
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.manifoldjs.manifestTools.fetchManifestUrlFromSite" id="apidoc.element.manifoldjs.manifestTools.fetchManifestUrlFromSite">
+        function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>fetchManifestUrlFromSite
+        <span class="apidocSignatureSpan">(siteUrl, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function fetchManifestUrlFromSite(siteUrl, callback) {
+
+  var deferred = Q.defer();
+  request({ uri: siteUrl }, function (err, response, body) {
+    if (err || response.statusCode !== 200) {
+      return deferred.reject(new Error(&#x27;Failed to retrieve manifest from site.&#x27;));
+    }
+
+    var $ = cheerio.load(body);
+    var manifestUrl = $(&#x27;link[rel~=&#x22;manifest&#x22;]&#x27;).attr(&#x27;href&#x27;);
+    if (manifestUrl) {
+      var parsedManifestUrl = url.parse(manifestUrl);
+      if (!parsedManifestUrl.host) {
+        manifestUrl = url.resolve(siteUrl, parsedManifestUrl.pathname);
+      }
+    }
+
+    return deferred.resolve(manifestUrl);
+  });
+
+  return deferred.promise.nodeify(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.manifoldjs.manifestTools.getManifestFromFile" id="apidoc.element.manifoldjs.manifestTools.getManifestFromFile">
+        function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>getManifestFromFile
+        <span class="apidocSignatureSpan">(filePath, manifestFormat, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getManifestFromFile(filePath, manifestFormat, callback) {
+
+  if (arguments.length &#x3c; 3) {
+    if (utils.isFunction(manifestFormat)) {
+      callback = manifestFormat;
+      manifestFormat = undefined;
+    }
+  }
+
+  return Q.nfcall(fs.readFile, filePath).then(function (data) {
+    return Q.nfcall(processManifestContents, data, manifestFormat);
+  })
+  .nodeify(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (parsedManifestUrl &#x26;&#x26; parsedManifestUrl.host) {
+    // download manifest from remote location
+    log.info(&#x27;Downloading manifest from &#x27; + manifestLocation + &#x27;...&#x27;);
+    manifestTools.downloadManifestFromUrl(manifestLocation, manifestFormat, resolveStartURL);
+  } else {
+    // read local manifest file
+    log.info(&#x27;Reading manifest file &#x27; + manifestLocation + &#x27;...&#x27;);
+    manifestTools.<span class="apidocCodeKeywordSpan">getManifestFromFile</span>(manifestLocation, manifestFormat, resolveStartURL
+);
+  }
+} else if (siteUrl) {
+  // scan a site to retrieve its manifest
+  log.info(&#x27;Scanning &#x27; + siteUrl + &#x27; for manifest...&#x27;);
+  manifestTools.getManifestFromSite(siteUrl, manifestFormat, resolveStartURL);
+} else {
+  return callback(new Error(&#x27;A site URL or manifest should be specified.&#x27;));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.manifoldjs.manifestTools.getManifestFromSite" id="apidoc.element.manifoldjs.manifestTools.getManifestFromSite">
+        function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>getManifestFromSite
+        <span class="apidocSignatureSpan">(siteUrl, manifestFormat, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getManifestFromSite(siteUrl, manifestFormat, callback) {
+
+  if (arguments.length &#x3c; 3) {
+    if (utils.isFunction(manifestFormat)) {
+      callback = manifestFormat;
+      manifestFormat = undefined;
+    }
+  }
+
+  return fetchManifestUrlFromSite(siteUrl).then(function (manifestUrl) {
+    if (manifestUrl) {
+      return Q.nfcall(downloadManifestFromUrl, manifestUrl, manifestFormat);
+    } else {
+      // TODO: review what to do in this case. (manifest meta tag is not present)
+      log.warn(&#x27;No manifest found. A new manifest will be created.&#x27;);
+
+      var shortName = utils.getDefaultShortName(siteUrl);
+      var manifestObj = {
+        content: {
+          &#x27;start_url&#x27;: siteUrl,
+          &#x27;short_name&#x27;: shortName
+        },
+        format: constants.BASE_MANIFEST_FORMAT
+      };
+
+      return manifestObj;
+    }
+  })
+  .nodeify(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      // read local manifest file
+      log.info(&#x27;Reading manifest file &#x27; + manifestLocation + &#x27;...&#x27;);
+      manifestTools.getManifestFromFile(manifestLocation, manifestFormat, resolveStartURL);
+    }
+  } else if (siteUrl) {
+    // scan a site to retrieve its manifest
+    log.info(&#x27;Scanning &#x27; + siteUrl + &#x27; for manifest...&#x27;);
+    manifestTools.<span class="apidocCodeKeywordSpan">getManifestFromSite</span>(siteUrl, manifestFormat, resolveStartURL);
+  } else {
+    return callback(new Error(&#x27;A site URL or manifest should be specified.&#x27;));
+  }
+}
+
+function generateApp(program) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.manifoldjs.manifestTools.imageGroupValidation" id="apidoc.element.manifoldjs.manifestTools.imageGroupValidation">
+        function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>imageGroupValidation
+        <span class="apidocSignatureSpan">(manifestContent, description, platform, validIconSizes, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function imageGroupValidation(manifestContent, description, platform, validIconSizes, callback) {
+  var icons = manifestContent.icons;
+
+  var result = {
+    description: description,
+    platform: platform,
+    level: constants.validation.levels.warning,
+    member: constants.validation.manifestMembers.icons,
+    code: constants.validation.codes.missingImageGroup,
+    data: validIconSizes.slice()
+  };
+
+  if (!icons || icons.length === 0) {
+    return callback(undefined, result);
+  }
+
+  for (var i = 0; i &#x3c; icons.length; i++) {
+    var iconSizes = icons[i].sizes;
+
+    for (var j = 0; j &#x3c; validIconSizes.length; j++) {
+      if (iconSizes === validIconSizes[j]) {
+        return callback();
+      }
+    }
+  }
+
+  callback(undefined, result);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.manifoldjs.manifestTools.imageValidation" id="apidoc.element.manifoldjs.manifestTools.imageValidation">
+        function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>imageValidation
+        <span class="apidocSignatureSpan">(manifestContent, description, platform, level, requiredIconSizes, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function imageValidation(manifestContent, description, platform, level, requiredIconSizes, callback) {
+  var icons = manifestContent.icons;
+
+  var result = {
+    description: description,
+    platform: platform,
+    level: level,
+    member: constants.validation.manifestMembers.icons,
+    code: constants.validation.codes.missingImage,
+    data: requiredIconSizes.slice()
+  };
+
+  if (!icons || icons.length === 0) {
+    return callback(undefined, result);
+  }
+
+  var missingIconsSizes = [];
+  var found;
+
+  for (var i = 0; i &#x3c; requiredIconSizes.length; i++) {
+    var requiredIcon = requiredIconSizes[i];
+    found = false;
+
+    for (var j = 0; j &#x3c; icons.length; j++) {
+      if (requiredIcon === icons[j].sizes) {
+        found = true;
+      }
+    }
+
+    if (!found) {
+      missingIconsSizes.push(requiredIcon);
+    }
+  }
+
+  result.data = missingIconsSizes;
+
+  if (!missingIconsSizes || missingIconsSizes.length === 0) {
+    callback();
+  } else {
+    callback(undefined, result);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.manifoldjs.manifestTools.listAvailableManifestFormats" id="apidoc.element.manifoldjs.manifestTools.listAvailableManifestFormats">
+        function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>listAvailableManifestFormats
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function listAvailableManifestFormats() {
+  return [constants.BASE_MANIFEST_FORMAT, constants.CHROME_MANIFEST_FORMAT, constants.EDGE_EXTENSION_MANIFEST_FORMAT];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  platformTools = lib.platformTools,
+  manifestTools = lib.manifestTools,
+  validations = lib.validations;
+
+var commands = require(&#x27;./commands&#x27;);
+
+// Get the available formats for the --forceManifestFormat parameter
+var availableManifestFormats = manifestTools.<span class="apidocCodeKeywordSpan">listAvailableManifestFormats</span>();
+
+function checkParameters(program) {
+var unknownArgs = 0;
+if (program.args.length &#x3e; 0) {
+  var command = program.args[0].toLowerCase();
+  switch (command) {
+    case &#x27;run&#x27;:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.manifoldjs.manifestTools.loadValidationRules" id="apidoc.element.manifoldjs.manifestTools.loadValidationRules">
+        function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>loadValidationRules
+        <span class="apidocSignatureSpan">(fileOrDir, platforms, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loadValidationRules(fileOrDir, platforms, callback) {
+
+  var stat = Q.nfbind(fs.stat);
+
+  // list contents of the validation rules folder
+  return Q.nfcall(fs.readdir, fileOrDir).then(function (files) {
+    return Q.allSettled(files.map(function (file) {
+      var filePath = path.join(fileOrDir, file);
+      return stat(filePath).then(function (info) {
+        // test if file system object is a directory or a file
+        if (info.isDirectory()) {
+          // ignore any directory that doesn&#x27;t  match one of the requested platforms
+          if (platforms.indexOf(file) &#x3c; 0) {
+              return Q.resolve();
+          }
+
+          // process the rules in the platform folder
+          return loadValidationRules(filePath, []);
+        }
+
+        // load the rules defined in the file
+        var rulePath = path.join(fileOrDir, file);
+        try {
+          // load the rule from the file
+          return require(rulePath);
+        }
+        catch (err) {
+          return Q.reject(new Error(&#x27;Failed to load validation rule from file: \&#x27;&#x27; + rulePath + &#x27;\&#x27;. &#x27; + err.message + &#x27;.&#x27;));
+        }
+      });
+    }))
+    .then (function (results) {
+      // verify the results and consolidate the loaded rules
+      return results.reduce(function (validationRules, result) {
+        if (result.state === &#x27;fulfilled&#x27;) {
+          if (result.value) {
+            if (Array.isArray(result.value)) {
+              validationRules.push.apply(validationRules, result.value);
+            }
+            else {
+              validationRules.push(result.value);
+            }
+          }
+        }
+        else {
+          log.error(result.reason.getMessage());
+        }
+
+        return validationRules;
+      }, []);
+    });
+  })
+  .catch (function (err) {
+    if (err.code !== &#x27;ENOTDIR&#x27;) {
+      throw err;
+    }
+
+    // fileOrDir is a file
+    var rules = require(fileOrDir);
+    return Array.isArray(rules) ? rules : [rules];
+  })
+  .catch(function (err) {
+    return Q.reject(new Error(&#x27;Failed to read validation rules from the specified location: \&#x27;&#x27; + fileOrDir + &#x27;\&#x27;. &#x27; + err.message
+ + &#x27;.&#x27;));
+  })
+  .nodeify(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.manifoldjs.manifestTools.runValidationRules" id="apidoc.element.manifoldjs.manifestTools.runValidationRules">
+        function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>runValidationRules
+        <span class="apidocSignatureSpan">(w3cManifestInfo, rules, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function runValidationRules(w3cManifestInfo, rules, callback) {
+
+  var results = [];
+  var pendingValidations = [];
+
+  rules.forEach(function (validationRule) {
+    var validationTask = Q.defer();
+    pendingValidations.push(validationTask.promise);
+
+    validationRule(w3cManifestInfo.content, function (err, ruleResult) {
+      if (err) {
+        return validationTask.reject(err);
+      }
+
+      if (toStringFunction.call(ruleResult) === &#x27;[object Array]&#x27;) {
+        results.push.apply(results, ruleResult);
+      } else if (ruleResult) {
+        results.push(ruleResult);
+      }
+
+      validationTask.resolve();
+    });
+  });
+
+  return Q.allSettled(pendingValidations)
+    .thenResolve(results)
+    .nodeify(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.manifoldjs.manifestTools.validateAndNormalizeStartUrl" id="apidoc.element.manifoldjs.manifestTools.validateAndNormalizeStartUrl">
+        function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>validateAndNormalizeStartUrl
+        <span class="apidocSignatureSpan">(siteUrl, manifestInfo, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function validateAndNormalizeStartUrl(siteUrl, manifestInfo, callback) {
+  if (manifestInfo.format !== constants.BASE_MANIFEST_FORMAT) {
+    return callback(new Error(&#x27;The manifest found is not a W3C manifest.&#x27;), manifestInfo);
+  }
+
+  if (manifestInfo.content.start_url) {
+    if (!utils.isURL(manifestInfo.content.start_url)) {
+      return callback(new Error(&#x27;The manifest\&#x27;s start_url member is not a valid URL: \&#x27;&#x27; + manifestInfo.content.start_url + &#x27;\&#x27;&#x27;),
+manifestInfo);
+    }
+  } else {
+    manifestInfo.content.start_url = &#x27;/&#x27;;
+  }
+
+  if (siteUrl) {
+    if (!utils.isURL(siteUrl)) {
+      return callback(new Error(&#x27;The site URL is not a valid URL: \&#x27;&#x27; + siteUrl + &#x27;\&#x27;&#x27;), manifestInfo);
+    }
+
+    var parsedSiteUrl = url.parse(siteUrl);
+    var parsedManifestStartUrl = url.parse(manifestInfo.content.start_url);
+    if (parsedManifestStartUrl.hostname &#x26;&#x26; parsedSiteUrl.hostname !== parsedManifestStartUrl.hostname) {
+       // issue #88 - bis
+      var subDomainOfManifestStartUrlSplitted = parsedManifestStartUrl.hostname.split(&#x27;.&#x27;);
+      var lengthSubDomain = subDomainOfManifestStartUrlSplitted.length;
+      var subDomainOfManifestStartUrl = null;
+      if(lengthSubDomain &#x3e;= 2){
+        subDomainOfManifestStartUrl =
+        subDomainOfManifestStartUrlSplitted[lengthSubDomain - 2] + &#x27;.&#x27; + subDomainOfManifestStartUrlSplitted[lengthSubDomain - 1
+];
+      }
+      if(!subDomainOfManifestStartUrl || !utils.isURL(subDomainOfManifestStartUrl) || parsedSiteUrl.hostname.toLowerCase() !== subDomainOfManifestStartUrl
+.toLowerCase()){
+        return callback(new Error(&#x27;The domain of the hosted site (&#x27; + parsedSiteUrl.hostname + &#x27;) does not match the domain of the
+ manifest\&#x27;s start_url member (&#x27; + parsedManifestStartUrl.hostname + &#x27;)&#x27;), manifestInfo);
+      }
+    }
+
+    manifestInfo.content.start_url = url.resolve(siteUrl, manifestInfo.content.start_url);
+
+    manifestInfo.default = { short_name: utils.getDefaultShortName(siteUrl) };
+  }
+
+  return callback(undefined, manifestInfo);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function getW3cManifest(siteUrl, manifestLocation, manifestFormat, callback) {
+function resolveStartURL(err, manifestInfo) {
+  if (err) {
+    return callback(err, manifestInfo);
+  }
+
+  if (manifestInfo.format === lib.constants.BASE_MANIFEST_FORMAT) {
+    return manifestTools.<span class="apidocCodeKeywordSpan">validateAndNormalizeStartUrl</span>(siteUrl, manifestInfo, callback
+);
+  } else {
+    return callback(undefined, manifestInfo);
+  }
+}
+
+if (siteUrl) {
+  var parsedSiteUrl = url.parse(siteUrl);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.manifoldjs.manifestTools.validateManifest" id="apidoc.element.manifoldjs.manifestTools.validateManifest">
+        function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>validateManifest
+        <span class="apidocSignatureSpan">(w3cManifestInfo, platforms, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function validateManifest(w3cManifestInfo, platforms, callback) {
+
+  if (!w3cManifestInfo || !w3cManifestInfo.content) {
+    return Q.reject(new Error(&#x27;Manifest content is empty or invalid.&#x27;)).nodeify(callback);
+  }
+
+  if (w3cManifestInfo.format !== constants.BASE_MANIFEST_FORMAT) {
+    return Q.reject(new Error(&#x27;The manifest passed as argument is not a W3C manifest.&#x27;)).nodeify(callback);
+  }
+
+  return platformTools.loadPlatforms(platforms).then(function (platformModules) {
+    return applyValidationRules(w3cManifestInfo, platformModules, platforms);
+  })
+  .nodeify(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.manifoldjs.manifestTools.writeToFile" id="apidoc.element.manifoldjs.manifestTools.writeToFile">
+        function <span class="apidocSignatureSpan">manifoldjs.manifestTools.</span>writeToFile
+        <span class="apidocSignatureSpan">(manifestInfo, filePath, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function writeToFile(manifestInfo, filePath, callback) {
+  if (manifestInfo &#x26;&#x26; manifestInfo.content) {
+    var jsonString = JSON.stringify(manifestInfo.content, undefined, 4);
+    return Q.nfcall(fs.writeFile, filePath, jsonString).nodeify(callback);
+  }
+
+  return Q.reject(new Error(&#x27;Manifest content is empty or invalid.&#x27;)).nodeify(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.manifoldjs.projectBuilder" id="apidoc.module.manifoldjs.projectBuilder">module manifoldjs.projectBuilder</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.manifoldjs.projectBuilder.createApps" id="apidoc.element.manifoldjs.projectBuilder.createApps">
+        function <span class="apidocSignatureSpan">manifoldjs.projectBuilder.</span>createApps
+        <span class="apidocSignatureSpan">(w3cManifestInfo, rootDir, platforms, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createApps(w3cManifestInfo, rootDir, platforms, options, callback) {
+
+  // validate arguments
+  if (arguments.length &#x3c; 3) {
+    return Q.reject(new Error(&#x27;One or more required arguments are missing.&#x27;)).nodeify(callback);
+  }
+
+  if (arguments.length === 4) {
+    if (utils.isFunction(options)) {
+      callback = options;
+      options = {};
+    }
+  }
+
+  // determine the path where the app will be created
+  options.appName = utils.sanitizeName(w3cManifestInfo.content.short_name);
+  var generatedAppDir = path.join(rootDir, options.appName);
+
+  // Add timestamp to manifest information for telemetry purposes only
+  w3cManifestInfo.timestamp = new Date().toISOString().replace(/T/, &#x27; &#x27;).replace(/\.[0-9]+/, &#x27; &#x27;);
+
+  // create app directory
+  return fileTools.mkdirp(generatedAppDir).then(function () {
+    // load the platform modules
+    return platformTools.loadPlatforms(platforms);
+  })
+  .then(function (platformModules) {
+    // validate the manifest
+    return validateManifest(w3cManifestInfo, platformModules, platforms).thenResolve(platformModules);
+  })
+  .then(function (platformModules) {
+    // create apps for each platform
+    var tasks = platformModules.map(function (platform) {
+      if (platform) {
+        log.debug(&#x27;Creating the \&#x27;&#x27; + platform.name + &#x27;\&#x27; app...&#x27;);
+        return Q.ninvoke(platform, &#x27;create&#x27;, w3cManifestInfo, generatedAppDir, options).then(function () {
+          log.info(&#x27;The &#x27; + platform.name + &#x27; app was created successfully!&#x27;);
+        })
+        .catch(function (err) {
+          return Q.reject(new CustomError(&#x27;Failed to create the &#x27; + platform.name + &#x27; app.&#x27;, err));
+        });
+      }
+
+      return Q.resolve();
+    });
+
+    return processPlatformTasks(tasks);
+  })
+  // return path to project folder
+  .thenResolve(generatedAppDir)
+  .nodeify(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      log.debug(&#x27;Removing Edge Extension platform. The W3C manifest format is not currently supported by this platform.&#x27
+;);
+      platforms.splice(edgeIndex, 1);
+    }
+  }
+}
+
+// Create the apps for the specified platforms
+return projectBuilder.<span class="apidocCodeKeywordSpan">createApps</span>(manifestInfo, rootDir, platforms, program).then(function
+ (projectDir) {
+  if (program.build) {
+    program.args[1] = projectDir;
+    return build(program, platforms).catch(function (err) {
+      log.warn(&#x27;One or more platforms could not be built successfully. Correct any errors and then run manifoldjs package [
+project-directory] [options] to build the applications.&#x27;);
+      // return deferred.reject(err);
+    });
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.manifoldjs.projectBuilder.openApp" id="apidoc.element.manifoldjs.projectBuilder.openApp">
+        function <span class="apidocSignatureSpan">manifoldjs.projectBuilder.</span>openApp
+        <span class="apidocSignatureSpan">(platformId, dir, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function openApp(platformId, dir, options, callback) {
+  // validate arguments
+  if (arguments.length &#x3c; 2) {
+    return Q.reject(new Error(&#x27;One or more required arguments are missing.&#x27;)).nodeify(callback);
+  }
+
+  if (arguments.length === 3) {
+    if (utils.isFunction(options)) {
+      callback = options;
+      options = {};
+    }
+  }
+
+  // find the root of the project
+  return projectTools.getProjectRoot(dir || process.cwd()).then(function (rootDir) {
+
+    if (!rootDir) {
+      return Q.reject(new Error(&#x27;The specified directory does not appear to contain a valid manifoldjs project.&#x27;));
+    }
+
+    // load the specified platform
+    return platformTools.loadPlatforms([platformId]).then(function (platformModules) {
+      // open the app for the platform
+      if (platformModules &#x26;&#x26; platformModules.length &#x3e; 0) {
+        var platform = platformModules[0];
+        log.debug(&#x27;Opening the \&#x27;&#x27; + platform.name + &#x27;\&#x27; app...&#x27;);
+        return Q.ninvoke(platform, &#x27;open&#x27;, rootDir, options).catch(function (err) {
+          return Q.reject(new CustomError(&#x27;Failed to open the &#x27; + platform.name + &#x27; app.&#x27;, err));
+        });
+      }
+
+      return Q.resolve();
+    });
+  })
+  .nodeify(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.manifoldjs.projectBuilder.packageApps" id="apidoc.element.manifoldjs.projectBuilder.packageApps">
+        function <span class="apidocSignatureSpan">manifoldjs.projectBuilder.</span>packageApps
+        <span class="apidocSignatureSpan">(platforms, dir, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function packageApps(platforms, dir, options, callback) {
+
+  // validate arguments
+  if (arguments.length &#x3c; 2) {
+    return Q.reject(new Error(&#x27;One or more required arguments are missing.&#x27;)).nodeify(callback);
+  }
+
+  if (arguments.length === 3) {
+    if (utils.isFunction(options)) {
+      callback = options;
+      options = {};
+    }
+  }
+
+  // find the root of the project
+  return projectTools.getProjectRoot(dir || process.cwd()).then(function (rootDir) {
+
+    if (!rootDir) {
+      return Q.reject(new Error(&#x27;The specified directory does not appear to contain a valid manifoldjs project.&#x27;));
+    }
+
+    // load all platforms specified in the command line
+    return platformTools.loadPlatforms(platforms).then(function (platformModules) {
+      // package apps for each platform
+      var tasks = platformModules.map(function (platform) {
+        if (platform) {
+          log.debug(&#x27;Packaging the \&#x27;&#x27; + platform.name + &#x27;\&#x27; app...&#x27;);
+          return Q.ninvoke(platform, &#x27;package&#x27;, rootDir, options).then(function () {
+            log.info(&#x27;The &#x27; + platform.name + &#x27; app was packaged successfully!&#x27;);
+          })
+          .catch (function (err) {
+            return Q.reject(new CustomError(&#x27;Failed to package the &#x27; + platform.name + &#x27; app.&#x27;, err));
+          });
+        }
+
+        return Q.resolve();
+      });
+
+      return processPlatformTasks(tasks);
+    });
+  })
+  .nodeify(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var projectDir = program.args.length &#x3c; 2 ? process.cwd() : program.args[1];
+  return lib.projectTools.getProjectPlatforms(projectDir).then(function (projectPlatforms) {
+    // exclude any platforms not present in the project
+    platforms = platforms.filter(function (platform) {
+      return projectPlatforms.indexOf(platform) &#x3e;= 0;
+    });
+
+    return projectBuilder.<span class="apidocCodeKeywordSpan">packageApps</span>(platforms, projectDir, program);
+  });
+}
+
+module.exports = packageApps;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.manifoldjs.projectBuilder.runApp" id="apidoc.element.manifoldjs.projectBuilder.runApp">
+        function <span class="apidocSignatureSpan">manifoldjs.projectBuilder.</span>runApp
+        <span class="apidocSignatureSpan">(platformId, dir, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function runApp(platformId, dir, options, callback) {
+  // validate arguments
+  if (arguments.length &#x3c; 2) {
+    return Q.reject(new Error(&#x27;One or more required arguments are missing.&#x27;)).nodeify(callback);
+  }
+
+  if (arguments.length === 3) {
+    if (utils.isFunction(options)) {
+      callback = options;
+      options = {};
+    }
+  }
+
+  // find the root of the project
+  return projectTools.getProjectRoot(dir || process.cwd()).then(function (rootDir) {
+
+    if (!rootDir) {
+      return Q.reject(new Error(&#x27;The specified directory does not appear to contain a valid manifoldjs project.&#x27;));
+    }
+
+    // load the specified platform
+    return platformTools.loadPlatforms([platformId]).then(function (platformModules) {
+      // run the app for the platform
+      if (platformModules &#x26;&#x26; platformModules.length &#x3e; 0) {
+        var platform = platformModules[0];
+        log.debug(&#x27;Launching the \&#x27;&#x27; + platform.name + &#x27;\&#x27; app ...&#x27;);
+        return Q.ninvoke(platform, &#x27;run&#x27;, rootDir, options).catch(function (err) {
+          return Q.reject(new CustomError(&#x27;Failed to launch the &#x27; + platform.name + &#x27; app.&#x27;, err));
+        });
+      }
+
+      return Q.resolve();
+    });
+  })
+  .nodeify(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.manifoldjs.projectTools" id="apidoc.module.manifoldjs.projectTools">module manifoldjs.projectTools</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.manifoldjs.projectTools.getProjectPlatforms" id="apidoc.element.manifoldjs.projectTools.getProjectPlatforms">
+        function <span class="apidocSignatureSpan">manifoldjs.projectTools.</span>getProjectPlatforms
+        <span class="apidocSignatureSpan">(dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getProjectPlatforms(dir) {
+  // get available platform IDs
+  var availablePlatforms = platformTools.listPlatforms();
+
+  return getProjectRoot(dir || process.cwd()).then(function (rootDir) {
+
+    if (!rootDir) {
+      return Q.reject(new Error(&#x27;The specified directory does not appear to contain a valid manifoldjs project.&#x27;));
+    }
+
+    // search child platform folders
+    return Q.nfcall(fs.readdir, rootDir).then(function (files) {
+      var platforms = files.filter(function (file) {
+
+        // filter folders not matching a platform ID
+        return availablePlatforms.indexOf(file) &#x3e;= 0;
+      });
+
+      return platforms;
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (!platforms) {
+  platforms = program.platforms ?
+              program.platforms.split(/[\s,]+/) :
+              platformTools.listPlatforms();
+}
+
+var projectDir = program.args.length &#x3c; 2 ? process.cwd() : program.args[1];
+return lib.projectTools.<span class="apidocCodeKeywordSpan">getProjectPlatforms</span>(projectDir).then(function (projectPlatforms
+) {
+  // exclude any platforms not present in the project
+  platforms = platforms.filter(function (platform) {
+    return projectPlatforms.indexOf(platform) &#x3e;= 0;
+  });
+
+  return projectBuilder.packageApps(platforms, projectDir, program);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.manifoldjs.projectTools.getProjectRoot" id="apidoc.element.manifoldjs.projectTools.getProjectRoot">
+        function <span class="apidocSignatureSpan">manifoldjs.projectTools.</span>getProjectRoot
+        <span class="apidocSignatureSpan">(dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getProjectRoot(dir) {
+
+  // check if this is the project root
+  return isProjectRoot(dir).then(function (isRoot) {
+    if (isRoot) {
+      return dir;
+    }
+
+    // search for a platform folder containing telemetry file
+    return searchForTelemetryFile(dir).then(function (filePath) {
+      if (filePath) {
+        // start search for project root from the platform folder
+        var parentPath = path.resolve(filePath, &#x27;..&#x27;);
+        if (parentPath !== dir) {
+          return getProjectRoot(parentPath);
+        }
+      }
+    });
+  })
+  .then(function (rootPath) {
+    // could be a false positive (e.g. &#x27;cordova/platforms&#x27; folder)
+    // search parent directories unless already at the root
+    if (rootPath) {
+      var parentPath = path.resolve(rootPath, &#x27;..&#x27;);
+      if (parentPath !== dir) {
+        return getProjectRoot(parentPath).then(function (result) {
+          return result || rootPath;
+        });
+      }
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.manifoldjs.projectTools.isProjectRoot" id="apidoc.element.manifoldjs.projectTools.isProjectRoot">
+        function <span class="apidocSignatureSpan">manifoldjs.projectTools.</span>isProjectRoot
+        <span class="apidocSignatureSpan">(dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isProjectRoot(dir) {
+  // get available platform IDs
+  var platforms = platformTools.listPlatforms();
+
+  // search child platform folders
+  return Q.nfcall(fs.readdir, dir).then(function (files) {
+    var searchTasks = files.map(function (file) {
+
+      // skip folders not matching a platform ID
+      if (platforms.indexOf(file) &#x3c; 0) {
+        return Q.resolve(false);
+      }
+
+      // search for telemetry file in the platform folder
+      var platformDir = path.join(dir, file);
+      return searchForTelemetryFile(platformDir).then(function (result) {
+        return !!result;
+      });
+    });
+
+    return Q.all(searchTasks).then (function (values) {
+      // verify if any platform folder contained a telemetry file
+      return values.some(function (result) {
+        return result;
+      });
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.manifoldjs.projectTools.openVisualStudioProject" id="apidoc.element.manifoldjs.projectTools.openVisualStudioProject">
+        function <span class="apidocSignatureSpan">manifoldjs.projectTools.</span>openVisualStudioProject
+        <span class="apidocSignatureSpan">(visualStudioFilePath, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function openVisualStudioProject(visualStudioFilePath, callback) {
+  log.info(&#x27;Opening the Visual Studio project \&#x27;&#x27; + visualStudioFilePath + &#x27;\&#x27;...&#x27;);
+  return exec(&#x27;cmd&#x27;, [&#x27;/c&#x27;, visualStudioFilePath], { statusMessage: &#x27;Opening project &#x27; }).catch(function (err) {
+    return Q.reject(new CustomError(&#x27;Failed to open the Visual Studio file &#x22;&#x27; + visualStudioFilePath + &#x27;&#x22;.&#x27;, err));
+  })
+  .nodeify(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
